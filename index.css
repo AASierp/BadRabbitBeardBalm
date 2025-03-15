@@ -1,19 +1,27 @@
 @font-face {
     font-family: "Yackien";
-    src: url(/fonts/Yackien.ttf);
+    src: url(/assets/fonts/Yackien.ttf);
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0; 
+    height: 100%;
 }
 
 .main-heading{
     font-size: 7rem;
     font-family: Yackien;
-    /* background-color: rgba(238, 219, 16, 0.8); */
-    color: FFF;
+    background-color: rgba(255, 255, 255, .2);
+    color: #000;
     text-align: center;
-    text-shadow: -2px -2px 0 blue ;
-    /* border: 1px solid black; */
+    text-shadow: -2px -2px 0 yellow ;
     width:100%;
     padding-top: 18px;
     margin: 0;
+    position: fixed;
+    z-index: 2;
 }
 
 .catch-phrase{
@@ -21,8 +29,8 @@
     font-size: 3rem;
     font-family: Yackien;
     font-style: italic;
-    color: white;
-    text-shadow: -2px -2px 0 blue;
+    color: gold;
+    text-shadow: -2px -2px 0 black;
     transform: scale(1.5, 1);
 }
 
@@ -32,21 +40,69 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/images/signature.png); 
+    background-image: url(/assets/images/signature.png);
     background-size: cover;
-    background-position: center;
-    opacity: 0.7; 
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    opacity: 1; 
     z-index: -1;  
 }
+
+.main-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    height: 100vh;
+    margin-top: 120px; 
+    padding-left: 320px; 
+    overflow-y: auto; 
+}
+
+.paragraph-1{
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: rgba(9, 9, 9, 0.4);
+    color: rgba(255, 255, 255, .8);
+    text-shadow: -2px -2px black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    margin-left: 500px;
+    margin-top: 500px;
+    border: 2px solid gold;
+    border-radius: 8px;
+
+}
 .sidebar{
-    position: fixed;
+    
+    width: 220px;           
+    height: 100vh;         
+    /* background-color: rgba(100, 255, 255, .1);  */
+    z-index: 1;
     top: 0;
-    left: 0;
-    width: 200px;           /* Adjust the width */
-    height: 100%;           /* Full height */
-    background-color: #333; /* Sidebar background */
-    color: white;
+    position: fixed;
+    
+}
+
+.sidebar .yellow-samurai{
+    max-width: 90%;
+    height: auto;
+    margin-left: 8px;
+    margin-top: 250px;
+    padding-bottom: 20px;
+    border-bottom:2px solid gold;
+
+}
+
+.sidebar .red-samurai{
+    max-width: 90%;
+    height: auto;
+    margin-left: 8px;
+    margin-top: 20px;
+    margin-bottom: 100%;
     padding-top: 20px;
+    border-top:2px solid gold;
 }
 
 .sidebar ul{
@@ -56,20 +112,22 @@
 }
 
 .sidebar li{
-    margin: 20px, 15px;
-    text-align: left;
-    font-size: 3rem;
+    
+    text-align: center;
+    font-size: 3.5rem;
     margin-bottom: 50px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .sidebar a{
-    color: white;
+    color: gold;
     font-family: Yackien;
-    text-shadow: -2px -2px 0 blue;
+    text-shadow: -3px -3px 0 black;
     text-decoration: none;
 }
 
-.signature-label{
-    
+.sidebar a:hover{
+    background-color: none;
+    color: blue;
 }
+
