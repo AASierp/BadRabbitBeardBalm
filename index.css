@@ -5,8 +5,9 @@
 
 html, body {
     overflow-x: hidden;
+    overflow-y: auto;
     margin: 0;
-    padding: 0; 
+    padding-bottom: 100px; 
     height: 100%;
 }
 
@@ -50,12 +51,14 @@ html, body {
 
 .main-content{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start; 
     height: 100vh;
-    margin-top: 120px; 
-    padding-left: 320px; 
-    overflow-y: auto; 
+    min-width: calc(100vh - 150px);
+    overflow-y: auto;
+    position: fixed; 
+    top: 40%;
+    left: 28%;
 }
 
 .paragraph-1{
@@ -68,21 +71,30 @@ html, body {
     text-shadow: -2px -2px black;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
-    margin-left: 500px;
-    margin-top: 500px;
+    margin: 0 auto;
     border: 2px solid gold;
     border-radius: 8px;
 
 }
 .sidebar{
     
-    width: 220px;           
-    height: 100vh;         
+    width: 222px;           
+    height: 100%;         
     /* background-color: rgba(100, 255, 255, .1);  */
-    z-index: 1;
-    top: 0;
+    z-index: 1000;
+    top: -50px;
+    left: -220px;
+    bottom: 100px;
+    transition: left 0.3s ease;
     position: fixed;
     
+    
+}
+
+.sidebar:hover{
+
+    left:0;
+
 }
 
 .sidebar .yellow-samurai{
@@ -122,12 +134,24 @@ html, body {
 .sidebar a{
     color: gold;
     font-family: Yackien;
-    text-shadow: -3px -3px 0 black;
+    text-shadow: -3px -3px 0 blue;
     text-decoration: none;
 }
 
 .sidebar a:hover{
     background-color: none;
-    color: blue;
+    color: black;
+    text-shadow: -2px -2px gold;
+}
+
+.foot{
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    margin-left: 1200px;
+    width: 100%;
+    font-size: 1rem;
+    display: block;
+    color: white;
 }
 
